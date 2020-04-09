@@ -36,15 +36,23 @@ def load(debug = False):
             else:
                 print("That file doesn't exist, please try again")
                 
-        label = input("What is the title of the column containing label data?")
-        descriptor = input("What is the title of the column containing the test data?")
+        label = input("What is the title (or index) of the column containing label data?")
+        descriptor = input("What is the title (or index) of the column containing the test data?")
     
     else:
         location = "Data/baselineMovies.csv"
         label = "name"
         descriptor = "overview"
+     
+    data = pd.read_csv(location)
+    
+    if isinstance(label, int):
+        label = data.columns[int(label)]
         
-    return pd.read_csv(location)
+    if isinstance(descriptor, int):
+        descriptor = data.columns[int(descriptor)]
+        
+    return data
 
 def strip(data, evalColumn):
     data_clean = data[pd.notnull(data[descriptor])]
