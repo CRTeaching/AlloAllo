@@ -93,6 +93,7 @@ def test():
     Column_Load()
     Column_Load(True)
     Test_GridSearch()
+    Test_Predict()
     
     testing = False
 
