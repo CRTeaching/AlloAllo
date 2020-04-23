@@ -72,6 +72,13 @@ def strip(data, evalColumn):
 
     return [eval(y)[0][label]for y in data_clean[evalColumn]]
 
+def search_and_fit (x_train, y_train, search):
+    print("Searching for the best paramaters and fitting the data....This may take a few minutes")
+    trained_model = search.fit(x_train, y_train)
+    return trained_model
+    
+    
+
 
 ##################################################################################
 ## Testing
