@@ -27,7 +27,7 @@ def load(location = ""):
     global label
     global descriptor
     # If this isn't in debug mode
-    if debug == "":
+    if location == "":
         while True:
             if os.path.exists(location):
                 break
