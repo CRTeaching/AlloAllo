@@ -70,7 +70,7 @@ def strip(data, evalColumn):
     templist = []
     loopvariable = data_clean.genres
 
-    return [eval(y)[0][label]for y in data_clean[evalColumn]]
+    return [eval(y)[0][evalColumn]for y in data_clean[label]]
 
 def search_and_fit (x_train, y_train, search):
     print("Searching for the best paramaters and fitting the data....This may take a few minutes")
